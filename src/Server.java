@@ -76,7 +76,7 @@ public class Server {
 
 			FileInputStream fileInputStream = new FileInputStream(file);
 
-			// send the file to the server
+			// send the desired file to the client
 			dataOutputStream.writeLong(file.length());
 			// Here we break file into chunks
 			byte[] buffer = new byte[4 * 1024];
