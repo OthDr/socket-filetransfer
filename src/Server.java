@@ -66,7 +66,7 @@ public class Server {
 		}
 	}
 
-	// sendFile function define here
+	// sendFile methode
 	private static void sendFile(String path) throws Exception {
 		int bytes = 0;
 		File file = new File(path);
@@ -76,7 +76,7 @@ public class Server {
 
 			FileInputStream fileInputStream = new FileInputStream(file);
 
-			// Here we send the File to Server
+			// send the file to the server
 			dataOutputStream.writeLong(file.length());
 			// Here we break file into chunks
 			byte[] buffer = new byte[4 * 1024];
@@ -85,7 +85,7 @@ public class Server {
 				dataOutputStream.write(buffer, 0, bytes);
 				dataOutputStream.flush();
 			}
-			// close the file here
+			// close IO stream
 			fileInputStream.close();
 		} else
 			System.out.println("No such a file found");
