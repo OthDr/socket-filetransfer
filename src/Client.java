@@ -75,13 +75,12 @@ public class Client {
 					dataOutputStream.close();
 
 			} catch (IOException e) {
-				// TODO: handle exception
 				e.printStackTrace();
 			}
 		}
 	}
 
-	// receive file function is start here
+	// receive file method
 	private static void receiveFile(String fileName) throws Exception {
 		int bytes = 0;
 //		File file = new File(fileName);
@@ -98,7 +97,7 @@ public class Client {
 				fileOutputStream.write(buffer, 0, bytes);
 				size -= bytes; // read upto file size
 			}
-			// Here we received file
+			// file is successfully received
 			System.out.println("File is Received");
 			fileOutputStream.close();
 //		}
